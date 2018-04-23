@@ -40,6 +40,8 @@ This attribute is present in the Binding Error Response or Shared Secret Error r
 This attribute is present only in Binding Response and its use is to provide traceability so the STUN server cannot be used as part of a denial of service attack. It contains the IP address of the source from where the request came from, i.e. the IP address of the STUN client.  
 
 ## STUN Server error codes  
+| Errorcode | Description |
+| --- | --- |
 | 400 | Bad request; the request was malformed. Client must modify request and try sending it again. |
 | 420 | Unknown attribute; the server did not understand an attribute in the request. |
 | 430 | Stale credentials; the shared secret sent in the request is expired; the client should obtain a new shared secret. |
