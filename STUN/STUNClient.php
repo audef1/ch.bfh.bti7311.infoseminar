@@ -61,6 +61,7 @@ class STUNClient
     private $_BindingResponse = 0x0101;
     private $_BindingErrorReponse = 0x0111;
     private $_MAPPED_ADDRESS = 0x0001;
+    private $_SOURCE_ADDRESS = 0x0001;
     private $_CHANGE_REQUEST = 0x0003;
     private $_CHANGED_ADDRESS = 0x0005;
     private $_ERROR_CODE = 0x0009;
@@ -227,7 +228,7 @@ class STUNClient
      * STUNClient::getLocalIPPort()
      * @return
      */
-    private function getLocalIPPort()
+    public function getLocalIPPort()
     {
         $s = socket_create(AF_INET, SOCK_STREAM, getprotobyname("tcp"));
         socket_connect($s, "www.google.com", 80);
@@ -624,5 +625,19 @@ class STUNClient
         } elseif ($t == NAT_TYPE::$_NAT_TYPE_UDP_BLOCKED) {
             return "Block " . $t;
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLocalIP(){
+        return $this->localIP;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLocalPort(){
+        return $this->localPort;
     }
 }
