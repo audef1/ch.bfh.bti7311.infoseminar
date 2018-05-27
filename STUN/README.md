@@ -47,3 +47,5 @@ This attribute is present only in Binding Response and its use is to provide tra
 | 430 | Stale credentials; the shared secret sent in the request is expired; the client should obtain a new shared secret. |
 | 432 | Missing username; the username attribute is not present in the request. |
 | 500 | Server error; temporary error and the client should try to send the request again. |
+
+Source: https://www.3cx.com/blog/voip-howto/stun-details/
